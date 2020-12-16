@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_sample/widgets/cart_item_card.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -8,7 +9,13 @@ class CartScreen extends StatelessWidget {
         title: const Text('カート'),
       ),
       body: SafeArea(
-        child: Container(),
+        child: Container(
+          child: Column(
+            children: [
+              CartItemCard(),
+            ],
+          ),
+        ),
       ),
     );
   }

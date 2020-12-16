@@ -6,23 +6,36 @@ class AppTheme {
 
   static const AppBarTheme _appBarTheme = AppBarTheme(
     elevation: 0,
-    color: Colors.white,
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
+    textTheme: TextTheme(
+      headline6: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+        letterSpacing: 0.15,
+        color: Colors.white,
+      ),
+    ),
   );
 
-  static final ThemeData _baseTheme = ThemeData(
-    appBarTheme: _appBarTheme,
-    primarySwatch: AppColors.primaryColor,
+  static const CardTheme _cardTheme = CardTheme(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(8)),
+    ),
   );
 
-  static ThemeData light() => _baseTheme.copyWith(
-        brightness: Brightness.light,
+  static ThemeData light() => ThemeData.light().copyWith(
+        appBarTheme: _appBarTheme,
+        cardTheme: _cardTheme.copyWith(
+          elevation: 0,
+        ),
+        primaryColor: AppColors.primaryColor,
       );
 
-  static ThemeData dark() => _baseTheme.copyWith(
-        brightness: Brightness.dark,
-        toggleableActiveColor: AppColors.primaryColor,
+  static ThemeData dark() => ThemeData.dark().copyWith(
+        appBarTheme: _appBarTheme,
+        cardTheme: _cardTheme,
+        primaryColorDark: AppColors.primaryColor,
       );
 }

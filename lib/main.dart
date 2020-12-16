@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_sample/constants/route_path.dart';
-import 'package:shopping_sample/screens/cart_screen.dart';
 import 'package:shopping_sample/screens/shop_screen.dart';
 import 'package:shopping_sample/themes/app_theme.dart';
 
@@ -17,7 +16,6 @@ class MyApp extends StatelessWidget {
       initialRoute: RoutePath.shop,
       routes: {
         RoutePath.shop: (BuildContext context) => ShopScreen(),
-        RoutePath.cart: (BuildContext context) => CartScreen(),
       },
     );
   }

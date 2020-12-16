@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_sample/screens/cart_screen.dart';
 
 class ShopScreen extends StatelessWidget {
   @override
@@ -9,7 +10,14 @@ class ShopScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart_outlined),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (BuildContext context) => CartScreen(),
+                  fullscreenDialog: true,
+                ),
+              );
+            },
           )
         ],
       ),
