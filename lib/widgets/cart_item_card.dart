@@ -19,7 +19,7 @@ class CartItemCard extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -34,6 +34,8 @@ class CartItemCard extends StatelessWidget {
                               Text(
                                 'Firebell Chinnamn Whisky',
                                 style: Theme.of(context).textTheme.subtitle1,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
                               ),
                               Text(
                                 '750.0ml bottle',

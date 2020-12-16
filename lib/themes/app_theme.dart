@@ -25,8 +25,13 @@ class AppTheme {
     ),
   );
 
+  static const ButtonThemeData _buttonThemeData = ButtonThemeData(
+    buttonColor: AppColors.primaryColor,
+  );
+
   static ThemeData light() => ThemeData.light().copyWith(
         appBarTheme: _appBarTheme,
+        buttonTheme: _buttonThemeData,
         cardTheme: _cardTheme.copyWith(
           elevation: 0,
         ),
@@ -35,6 +40,7 @@ class AppTheme {
 
   static ThemeData dark() => ThemeData.dark().copyWith(
         appBarTheme: _appBarTheme,
+        buttonTheme: _buttonThemeData,
         cardTheme: _cardTheme,
         primaryColorDark: AppColors.primaryColor,
       );
