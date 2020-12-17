@@ -4,6 +4,10 @@ import 'package:shopping_sample/constants/color.dart';
 class AppTheme {
   AppTheme._();
 
+  static final ColorScheme _colorScheme = ColorScheme.fromSwatch(
+    primarySwatch: AppColors.primaryColor,
+  );
+
   static const AppBarTheme _appBarTheme = AppBarTheme(
     elevation: 0,
     iconTheme: IconThemeData(
@@ -25,8 +29,11 @@ class AppTheme {
     ),
   );
 
-  static const ButtonThemeData _buttonThemeData = ButtonThemeData(
-    buttonColor: AppColors.primaryColor,
+  static final ButtonThemeData _buttonThemeData = ButtonThemeData(
+    colorScheme: _colorScheme,
+    textTheme: ButtonTextTheme.primary,
+    shape: const StadiumBorder(),
+    // buttonColor: AppColors.primaryColor
   );
 
   static ThemeData light() => ThemeData.light().copyWith(

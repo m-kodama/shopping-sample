@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_sample/widgets/billing_detail.dart';
 import 'package:shopping_sample/widgets/cart_item_card.dart';
+import 'package:shopping_sample/widgets/primary_button.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -25,20 +26,12 @@ class CartScreen extends StatelessWidget {
                         BillingDetail(),
                         Container(
                           margin: const EdgeInsets.only(top: 32),
-                          child: SizedBox(
+                          child: PrimaryButton(
+                            text: 'お支払いへ',
+                            onPressed: () {},
+                            icon: Icons.payment_outlined,
+                            size: ButtonSize.large,
                             width: double.infinity,
-                            height: 64,
-                            child: RaisedButton.icon(
-                              icon: const Icon(Icons.payment_outlined),
-                              label: const Text(
-                                'お支払いへ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              shape: const StadiumBorder(),
-                              onPressed: () {},
-                            ),
                           ),
                         ),
                       ],
