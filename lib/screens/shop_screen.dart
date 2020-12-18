@@ -5,7 +5,7 @@ import 'package:shopping_sample/widgets/confirm_cart_bottom_sheet.dart';
 import 'package:shopping_sample/widgets/shop_item_card.dart';
 
 class ShopScreen extends StatelessWidget {
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
