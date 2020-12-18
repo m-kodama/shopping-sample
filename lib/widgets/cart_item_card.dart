@@ -45,7 +45,7 @@ class CartItemCard extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.delete_outline,
                             color: Colors.grey,
                           ),
@@ -59,13 +59,13 @@ class CartItemCard extends StatelessWidget {
                         Row(
                           children: [
                             IconButton(
-                              icon: Icon(Icons.indeterminate_check_box),
+                              icon: const Icon(Icons.indeterminate_check_box),
                               color: AppColors.primaryColor,
                               onPressed: () {},
                             ),
                             Text('1'),
                             IconButton(
-                              icon: Icon(Icons.add_box),
+                              icon: const Icon(Icons.add_box),
                               color: AppColors.primaryColor,
                               onPressed: () {},
                             )
