@@ -10,6 +10,8 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     @required this.text,
     @required this.onPressed,
+    this.textColor,
+    this.fillColor,
     this.icon,
     this.width,
     this.size = ButtonSize.medium,
@@ -17,15 +19,17 @@ class PrimaryButton extends StatelessWidget {
 
   final String text;
   final VoidCallback onPressed;
+  final Color textColor;
+  final Color fillColor;
   final IconData icon;
   final double width;
   final ButtonSize size;
 
   @override
   Widget build(BuildContext context) {
-    const textStyle = TextStyle(
+    final textStyle = TextStyle(
       fontWeight: FontWeight.bold,
-      color: Colors.white,
+      color: textColor ?? Colors.white,
     );
 
     return SizedBox(
@@ -33,6 +37,7 @@ class PrimaryButton extends StatelessWidget {
       height: _height,
       child: icon == null
           ? RaisedButton(
+              color: fillColor,
               elevation: 0,
               highlightElevation: 0,
               child: Text(
@@ -42,6 +47,7 @@ class PrimaryButton extends StatelessWidget {
               onPressed: onPressed,
             )
           : RaisedButton.icon(
+              color: fillColor,
               elevation: 0,
               highlightElevation: 0,
               icon: Icon(

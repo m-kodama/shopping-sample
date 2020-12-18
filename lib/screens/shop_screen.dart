@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_sample/constants/route_path.dart';
 import 'package:shopping_sample/screens/cart_screen.dart';
+import 'package:shopping_sample/widgets/confirm_cart_bottom_sheet.dart';
 import 'package:shopping_sample/widgets/shop_item_card.dart';
 
 class ShopScreen extends StatelessWidget {
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: const Text('ショップ'),
         actions: [
@@ -25,6 +29,7 @@ class ShopScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView.separated(
+          padding: const EdgeInsets.only(bottom: 100),
           itemCount: 8,
           separatorBuilder: (BuildContext context, int index) =>
               const Divider(),
@@ -41,6 +46,15 @@ class ShopScreen extends StatelessWidget {
           },
         ),
       ),
+      bottomSheet: Builder(builder: (context) {
+        return ConfirmCartBottomSheet(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(_scaffoldKey.currentState.context)
+                .viewPadding
+                .bottom,
+          ),
+        );
+      }),
     );
   }
 }
