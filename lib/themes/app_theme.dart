@@ -50,5 +50,6 @@ class AppTheme {
         buttonTheme: _buttonThemeData,
         cardTheme: _cardTheme,
         primaryColorDark: AppColors.primaryColor,
+        textSelectionColor: AppColors.primaryColor,
       );
 }
