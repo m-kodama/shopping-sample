@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_sample/widgets/app_logo.dart';
 import 'package:shopping_sample/widgets/billing_detail.dart';
 import 'package:shopping_sample/widgets/cart_item_card.dart';
 import 'package:shopping_sample/widgets/primary_button.dart';
@@ -8,7 +9,8 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('カート'),
+        title: AppLogo(),
+        centerTitle: true,
       ),
       body: SafeArea(
         child: ListView.builder(
