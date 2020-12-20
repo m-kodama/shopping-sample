@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_sample/constants/route_path.dart';
 import 'package:shopping_sample/screens/cart_screen.dart';
+import 'package:shopping_sample/widgets/app_logo.dart';
 import 'package:shopping_sample/widgets/confirm_cart_bottom_sheet.dart';
 import 'package:shopping_sample/widgets/shop_item_card.dart';
 
@@ -12,7 +13,8 @@ class ShopScreen extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: const Text('ショップ'),
+        title: AppLogo(),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart_outlined),
