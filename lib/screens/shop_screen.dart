@@ -31,7 +31,7 @@ class ShopScreen extends StatelessWidget {
         ],
       ),
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
@@ -86,24 +86,21 @@ class ShopScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.only(bottom: 100),
-                itemCount: 8,
-                separatorBuilder: (BuildContext context, int index) =>
-                    const Divider(),
-                itemBuilder: (BuildContext context, int index) {
-                  return InkWell(
+            ListView.builder(
+              padding: const EdgeInsets.only(left: 16, right: 16, bottom: 100),
+              itemCount: 8,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: ShopItemCard(
                     onTap: () {
                       Navigator.of(context).pushNamed(RoutePath.itemDetail);
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                      child: ShopItemCard(),
-                    ),
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
           ],
         ),
