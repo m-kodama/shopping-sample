@@ -5,11 +5,11 @@ import 'package:shopping_sample/constants/color.dart';
 class ShopItemCard extends StatelessWidget {
   const ShopItemCard({
     @required this.onTap,
-    this.seed = 'random_value3',
+    this.imageUrl = 'https://picsum.photos/seed/value/100',
   });
 
   final VoidCallback onTap;
-  final String seed;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class ShopItemCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    imageUrl: 'https://picsum.photos/seed/$seed/100',
+                    imageUrl: imageUrl,
                   ),
                   Container(
                     width: 64,

@@ -35,6 +35,7 @@ class ShopScreen extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 100),
           itemCount: 1 + 20,
           itemBuilder: (BuildContext context, int index) {
+            final imageUrl = 'https://picsum.photos/seed/$index';
             return index == 0
                 ? Padding(
                     padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -99,9 +100,12 @@ class ShopScreen extends StatelessWidget {
                     ),
                     child: ShopItemCard(
                       onTap: () {
-                        Navigator.of(context).pushNamed(RoutePath.itemDetail);
+                        Navigator.of(context).pushNamed(
+                          RoutePath.itemDetail,
+                          arguments: '$imageUrl/400',
+                        );
                       },
-                      seed: 'random_$index',
+                      imageUrl: '$imageUrl/100',
                     ),
                   );
           },

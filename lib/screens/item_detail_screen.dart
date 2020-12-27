@@ -10,6 +10,9 @@ class ItemDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context).settings.arguments;
+    final imageUrl = arguments is String ? arguments : null;
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -29,8 +32,17 @@ class ItemDetailScreen extends StatelessWidget {
                   height: 220,
                   child: CachedNetworkImage(
                     fit: BoxFit.cover,
-                    placeholder: (context, url) => CircularProgressIndicator(),
-                    imageUrl: 'https://picsum.photos/seed/random_value3/800',
+                    placeholder: (context, url) => const Center(
+                      child: SizedBox(
+                        width: 24,
+                        height: 24,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                              AppColors.primaryColor),
+                        ),
+                      ),
+                    ),
+                    imageUrl: imageUrl,
                   ),
                 ),
                 Card(
