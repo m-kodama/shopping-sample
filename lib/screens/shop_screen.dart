@@ -37,7 +37,7 @@ class ShopScreen extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             return index == 0
                 ? Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                     child: Row(
                       children: [
                         Expanded(
