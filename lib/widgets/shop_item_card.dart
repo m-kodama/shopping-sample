@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:shopping_sample/constants/color.dart';
 
 class ShopItemCard extends StatelessWidget {
   const ShopItemCard({
@@ -29,8 +30,16 @@ class ShopItemCard extends StatelessWidget {
                     width: 100,
                     height: 100,
                     fit: BoxFit.cover,
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
+                    placeholder: (context, url) => const Center(
+                      child: SizedBox(
+                        width: 24,
+                        height: 24,
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                              AppColors.primaryColor),
+                        ),
+                      ),
+                    ),
                     imageUrl: 'https://picsum.photos/seed/$seed/100',
                   ),
                   Container(
