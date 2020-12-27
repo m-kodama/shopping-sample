@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:shopping_sample/constants/color.dart';
+import 'package:shopping_sample/widgets/app_indicator.dart';
 
 class CartItemCard extends StatelessWidget {
   @override
@@ -14,8 +15,8 @@ class CartItemCard extends StatelessWidget {
             CachedNetworkImage(
               width: 80,
               fit: BoxFit.cover,
-              placeholder: (context, url) => CircularProgressIndicator(),
-              imageUrl: 'https://picsum.photos/seed/random_value1/200',
+              placeholder: (context, url) => AppIndicator(),
+              imageUrl: 'https://picsum.photos/seed/random_value200/200',
             ),
             Expanded(
               child: Padding(

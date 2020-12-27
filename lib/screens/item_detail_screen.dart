@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_sample/constants/color.dart';
 import 'package:shopping_sample/widgets/add_cart_bottom_sheet.dart';
+import 'package:shopping_sample/widgets/app_indicator.dart';
 import 'package:shopping_sample/widgets/checkbox_tile.dart';
 
 class ItemDetailScreen extends StatelessWidget {
@@ -32,16 +33,7 @@ class ItemDetailScreen extends StatelessWidget {
                   height: 220,
                   child: CachedNetworkImage(
                     fit: BoxFit.cover,
-                    placeholder: (context, url) => const Center(
-                      child: SizedBox(
-                        width: 24,
-                        height: 24,
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                              AppColors.primaryColor),
-                        ),
-                      ),
-                    ),
+                    placeholder: (context, url) => AppIndicator(),
                     imageUrl: imageUrl,
                   ),
                 ),
