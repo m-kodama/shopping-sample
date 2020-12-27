@@ -4,9 +4,11 @@ import 'package:cached_network_image/cached_network_image.dart';
 class ShopItemCard extends StatelessWidget {
   const ShopItemCard({
     @required this.onTap,
+    this.seed = 'random_value3',
   });
 
   final VoidCallback onTap;
+  final String seed;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +29,9 @@ class ShopItemCard extends StatelessWidget {
                     width: 100,
                     height: 100,
                     fit: BoxFit.cover,
-                    placeholder: (context, url) => CircularProgressIndicator(),
-                    imageUrl: 'https://picsum.photos/seed/random_value3/100',
+                    placeholder: (context, url) =>
+                        const CircularProgressIndicator(),
+                    imageUrl: 'https://picsum.photos/seed/$seed/100',
                   ),
                   Container(
                     width: 64,
