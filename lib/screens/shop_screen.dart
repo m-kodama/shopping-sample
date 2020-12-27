@@ -34,7 +34,7 @@ class ShopScreen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(16, 8, 8, 8),
+              padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
               child: Row(
                 children: [
                   Expanded(
@@ -47,7 +47,18 @@ class ShopScreen extends StatelessWidget {
                                 ? Colors.grey[200]
                                 : Colors.grey[700],
                         hintText: '検索',
-                        border: InputBorder.none,
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(4)),
+                          borderSide: BorderSide(
+                            width: 0,
+                            style: BorderStyle.none,
+                          ),
+                        ),
+                        contentPadding: const EdgeInsets.all(8),
+                        isDense: true,
+                      ),
+                      style: const TextStyle(
+                        fontSize: 12,
                       ),
                       keyboardType: TextInputType.streetAddress,
                       autofillHints: const [AutofillHints.email],
@@ -57,8 +68,8 @@ class ShopScreen extends StatelessWidget {
                     width: 4,
                   ),
                   SizedBox(
-                    width: 48,
-                    height: 48,
+                    width: 32,
+                    height: 32,
                     child: RaisedButton(
                       child: const Icon(
                         Icons.search_outlined,
@@ -67,7 +78,7 @@ class ShopScreen extends StatelessWidget {
                       elevation: 0,
                       padding: EdgeInsets.zero,
                       shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.zero),
+                        borderRadius: BorderRadius.all(Radius.circular(4)),
                       ),
                       onPressed: () {},
                     ),
