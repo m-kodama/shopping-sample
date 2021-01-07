@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # l10n
+  intl: ^0.16.1
   # 静的解析強化
   pedantic_mono: ^1.10.0+3
   # Provider関連

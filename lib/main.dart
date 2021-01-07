@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shopping_sample/constants/route_path.dart';
+import 'package:shopping_sample/repositories/product_repository_dummy.dart';
+import 'package:shopping_sample/repositories/product_repository.dart';
 import 'package:shopping_sample/screens/item_detail_screen.dart';
 import 'package:shopping_sample/screens/shop_screen.dart';
 import 'package:shopping_sample/themes/app_theme.dart';
@@ -7,7 +10,22 @@ import 'package:shopping_sample/themes/app_theme.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        Provider<ProductRepository>(
+          create: (_) => ProductRepositoryDummy(),
+        ),
+      ],
+      child: const _MyApp(),
+    );
+  }
+}
+
+class _MyApp extends StatelessWidget {
+  const _MyApp();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,8 +34,9 @@ class MyApp extends StatelessWidget {
       darkTheme: AppTheme.dark(),
       initialRoute: RoutePath.shop,
       routes: {
-        RoutePath.shop: (BuildContext context) => ShopScreen(),
-        RoutePath.itemDetail: (BuildContext context) => ItemDetailScreen(),
+        RoutePath.shop: (BuildContext context) => const ShopScreen(),
+        RoutePath.itemDetail: (BuildContext context) =>
+            const ItemDetailScreen(),
       },
     );
   }

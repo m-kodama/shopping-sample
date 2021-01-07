@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shopping_sample/constants/color.dart';
+import 'package:shopping_sample/models/product/product_state.dart';
 import 'package:shopping_sample/widgets/primary_button.dart';
 
 class AddCartBottomSheet extends StatelessWidget {
@@ -29,7 +31,8 @@ class AddCartBottomSheet extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '【5人前】さみだれ（55貫）',
+                      context
+                          .select<ProductState, String>((state) => state.name),
                       style: Theme.of(context).textTheme.caption.copyWith(
                             color: Colors.white,
                           ),
@@ -37,7 +40,8 @@ class AddCartBottomSheet extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      '￥3,950',
+                      context.select<ProductState, String>(
+                          (state) => state.totalPrice),
                       style: Theme.of(context).textTheme.headline6.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,

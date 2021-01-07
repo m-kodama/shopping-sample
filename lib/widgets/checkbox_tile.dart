@@ -3,10 +3,14 @@ import 'package:shopping_sample/constants/color.dart';
 
 class CheckboxTile extends StatelessWidget {
   const CheckboxTile({
-    this.title,
+    @required this.title,
+    @required this.isSelected,
+    @required this.onChanged,
   });
 
   final String title;
+  final bool isSelected;
+  final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +19,8 @@ class CheckboxTile extends StatelessWidget {
       controlAffinity: ListTileControlAffinity.leading,
       checkColor: Colors.white,
       activeColor: AppColors.primaryColor,
-      value: true,
-      onChanged: (bool value) {},
+      value: isSelected,
+      onChanged: onChanged,
     );
   }
 }
