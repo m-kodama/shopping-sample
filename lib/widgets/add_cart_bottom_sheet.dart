@@ -4,6 +4,7 @@ import 'package:shopping_sample/constants/color.dart';
 import 'package:shopping_sample/models/product/product_state.dart';
 import 'package:shopping_sample/screens/modal/app_dialog.dart';
 import 'package:shopping_sample/screens/modal/modal_overlay.dart';
+import 'package:shopping_sample/screens/modal/sample_dialog.dart';
 import 'package:shopping_sample/widgets/primary_button.dart';
 
 class AddCartBottomSheet extends StatelessWidget {
@@ -58,7 +59,7 @@ class AddCartBottomSheet extends StatelessWidget {
                   onPressed: () async {
                     final result = await Navigator.of(context).push<String>(
                       ModalOverlay<String>(
-                        child: AppDialog(),
+                        child: SampleDialog(),
                         isAndroidBackEnable: false,
                       ),
                     );
