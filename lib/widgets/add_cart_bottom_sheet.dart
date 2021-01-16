@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_sample/constants/color.dart';
 import 'package:shopping_sample/models/product/product_state.dart';
+import 'package:shopping_sample/screens/modal/app_dialog.dart';
+import 'package:shopping_sample/screens/modal/modal_overlay.dart';
 import 'package:shopping_sample/widgets/primary_button.dart';
 
 class AddCartBottomSheet extends StatelessWidget {
@@ -53,7 +55,15 @@ class AddCartBottomSheet extends StatelessWidget {
               Expanded(
                 child: PrimaryButton(
                   text: 'カートに追加',
-                  onPressed: () {},
+                  onPressed: () async {
+                    final result = await Navigator.of(context).push<String>(
+                      ModalOverlay<String>(
+                        child: AppDialog(),
+                        isAndroidBackEnable: false,
+                      ),
+                    );
+                    print(result);
+                  },
                   textColor: AppColors.primaryColor,
                   fillColor: Colors.white,
                   width: double.infinity,
