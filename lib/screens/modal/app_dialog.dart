@@ -7,7 +7,7 @@ class AppDialog extends StatelessWidget {
     this.subject,
     this.text,
     @required this.buttons,
-  }) : assert(subject == null && text == null);
+  }) : assert(subject != null || text != null);
 
   final String title;
   final String subject;
