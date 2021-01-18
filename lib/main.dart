@@ -4,6 +4,7 @@ import 'package:shopping_sample/constants/route_path.dart';
 import 'package:shopping_sample/repositories/product_repository_dummy.dart';
 import 'package:shopping_sample/repositories/product_repository.dart';
 import 'package:shopping_sample/screens/item_detail_screen.dart';
+import 'package:shopping_sample/screens/sample_screen.dart';
 import 'package:shopping_sample/screens/shop_screen.dart';
 import 'package:shopping_sample/themes/app_theme.dart';
 
@@ -32,11 +33,12 @@ class _MyApp extends StatelessWidget {
       title: 'Shopping sample',
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      initialRoute: RoutePath.shop,
+      initialRoute: '/sample',
       routes: {
         RoutePath.shop: (BuildContext context) => const ShopScreen(),
         RoutePath.itemDetail: (BuildContext context) =>
             const ItemDetailScreen(),
+        '/sample': (_) => SampleScreen(),
       },
     );
   }

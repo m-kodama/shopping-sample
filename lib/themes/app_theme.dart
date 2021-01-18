@@ -32,8 +32,8 @@ class AppTheme {
   static final ButtonThemeData _buttonThemeData = ButtonThemeData(
     colorScheme: _colorScheme,
     textTheme: ButtonTextTheme.primary,
-    shape: const StadiumBorder(),
-    // buttonColor: AppColors.primaryColor
+    // shape: const StadiumBorder(),
+    buttonColor: AppColors.primaryColor,
   );
 
   static ThemeData light() => ThemeData.light().copyWith(
