@@ -1,16 +1,20 @@
 # shopping_sample
+### ライトテーマ
+![light](https://user-images.githubusercontent.com/28724739/111897370-ecd8ee80-8a62-11eb-8876-6975c19bc88b.png)
 
-A new Flutter application.
+### ダークテーマ
+![dark](https://user-images.githubusercontent.com/28724739/111897373-f3676600-8a62-11eb-8be9-983ea278b939.png)
 
-## Getting Started
+フードデリバリーアプリの簡易サンプル（学習目的）
+- UI構築
+- ダークモード対応
+- 画面遷移
+- 状態管理
+- MVVMアーキテクチャー
+  - Repositoryからダミーデータの取得 → 表示まで
+  - カートへ商品を追加する機能はなし
 
-This project is a starting point for a Flutter application.
+## 起動方法
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `flutter pub get`
+- `flutter run`
