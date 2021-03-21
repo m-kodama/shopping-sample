@@ -6,10 +6,11 @@ class AppIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: SizedBox(
-        width: 24,
-        height: 24,
+        width: 48,
+        height: 48,
         child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(AppColors.primaryColor),
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+          strokeWidth: 2,
         ),
       ),
     );

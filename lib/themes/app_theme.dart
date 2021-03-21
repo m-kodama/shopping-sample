@@ -32,7 +32,7 @@ class AppTheme {
   static final ButtonThemeData _buttonThemeData = ButtonThemeData(
     colorScheme: _colorScheme,
     textTheme: ButtonTextTheme.primary,
-    // shape: const StadiumBorder(),
+    shape: const StadiumBorder(),
     buttonColor: AppColors.primaryColor,
   );
 

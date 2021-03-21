@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shopping_sample/constants/route_path.dart';
 import 'package:shopping_sample/repositories/product_repository_dummy.dart';
 import 'package:shopping_sample/repositories/product_repository.dart';
+import 'package:shopping_sample/screens/cart_screen.dart';
 import 'package:shopping_sample/screens/item_detail_screen.dart';
 import 'package:shopping_sample/screens/sample_screen.dart';
 import 'package:shopping_sample/screens/shop_screen.dart';
@@ -30,12 +31,14 @@ class _MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Shopping sample',
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
-      initialRoute: '/sample',
+      initialRoute: RoutePath.shop,
       routes: {
         RoutePath.shop: (BuildContext context) => const ShopScreen(),
+        RoutePath.cart: (BuildContext context) => CartScreen(),
         RoutePath.itemDetail: (BuildContext context) =>
             const ItemDetailScreen(),
         '/sample': (_) => SampleScreen(),
